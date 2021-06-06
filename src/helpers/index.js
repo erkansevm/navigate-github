@@ -1,17 +1,23 @@
-
+import axios from 'axios'
 const helpers = {
-  findRepoName :  (repoLink)=>{
+  createRootReqUrl:  (repoLink)=>{
     
     const info = repoLink.split('/');
     const repoName = info[info.length-1];
     const repoOwner = info[info.length-2];
-    return `api.github.com/repos/${repoOwner}/${repoName}`;
+    return `https://api.github.com/repos/${repoOwner}/${repoName}`;
   },
   findBranches : function (repoLink) {
-    return 'https://'+this.findRepoName(repoLink) + '/branches';
+    return 'https://'+this.createRootReqUrl(repoLink) + '/branches';
   },
   findCommits: function (repoLink) {
-    return this.findRepoName(repoLink) + '/commits';
+    return this.createRootReqUrl(repoLink) + '/commits';
+  },
+  fetchUrl:  async function (requestUrl) {
+   console.log('url',requestUrl);
+   const response = await axios.get(requestUrl);
+   console.log(response);
+   return response;
   }
 }
 

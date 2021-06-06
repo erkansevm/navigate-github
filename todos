@@ -1,5 +1,6 @@
-[]-> create get request link from given link
-[]-> make get request from created link
+[+]-> create get request link from given link
+[+]-> make get request from created link
+[+]-> select branch
 []-> options
    []-> first commit
    []-> last commit
