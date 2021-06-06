@@ -1,0 +1,11 @@
+[]-> create get request link from given link
+[]-> make get request from created link
+[]-> options
+   []-> first commit
+   []-> last commit
+   []-> given number of commit
+   []-> direct commit or the page of searched commit
+[]-> check whether the link is valid or not valid  
+[]-> my own github link  
+[]-> animations
+[]-> clean up

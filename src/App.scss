@@ -1,0 +1,97 @@
+.app{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F6F8FF;
+}
+
+.content{
+  max-width: 200px;
+  width: fit-content;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.element{
+  position: relative;
+  width: 100%;
+  min-width: 240px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid #E1E6F9;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 0 var(1.5px, 1px) var(#275EFE, var(#E1E6F9));
+  input{
+    line-height: 24px;
+    background: none;
+    border: none;
+    outline: none;
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 12px 12px 12px 40px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: #464955;
+    &::placeholder{
+      font-weight: 500;
+      color:  #BBC1E1;
+    }
+  }
+  i{
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    pointer-events: none;
+  }
+  button{
+    display: none;
+  }
+  &:focus-within{
+    border-width: 1.8px;
+    border-color: #275EFE;
+  }
+}
+
+.branch-options{
+  position: relative;
+  padding: 10px 20px;
+  width: fit-content;
+  height: 50px;
+
+  select{
+    width: 100%;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    &:focus{
+      border: none;
+      outline: none;
+    }
+    
+  }
+}
+
+.result-inner{
+  overflow: hidden;
+  font-family: inherit;
+  font-size: 14px;
+  min-height: 50px;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  color: #464955;
+  font-weight: 700;
+  .wrapper{
+    height: fit-content;
+    overflow: hidden;
+    width: fit-content;
+  }
+}
