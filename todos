@@ -4,7 +4,7 @@
 []-> options
    [x]-> first commit
    [x]-> last commit
-       []-> get last commit link
+       [x]-> get last commit link
    []-> given number of commit
    []-> direct commit or the page of searched commit
 []-> check whether the link is valid or not valid  

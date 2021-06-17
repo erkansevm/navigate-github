@@ -22,13 +22,19 @@ const helpers = {
         Accept: "application/vnd.github.v3+json",
       },
     })
-    .then((data) => data.headers)
+    .then((data) => {
+      return data.headers
+    })
     .then(
-      (result) =>
-      result
+      (result) =>{
+      if(!result.get('link')){
+        return 1
+      }
+      return result
       .get("link")
       .split(",")[1]
       .match(/.*page=(?<page_num>\d+)/).groups.page_num
+      }
     )
     .then((numberOfPages) => {
       pages = numberOfPages;
@@ -49,10 +55,10 @@ const helpers = {
   },
   findCommits:async function (repoLink,branchName,option) {
     const commitCount = await this.findCommitCountAtGivenBranch(repoLink, branchName, option);
+    console.log(commitCount);
     if (commitCount < 35) {
       return `${repoLink}/commits/${branchName}`
     }
-
     const numberAfterSha = commitCount - 35;
     let url = `${this.createRootReqUrl(repoLink)}/commits?sha=${branchName}&per_page=35`
     const response = await axios.get(url);
